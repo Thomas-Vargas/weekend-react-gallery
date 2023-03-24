@@ -1,11 +1,11 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
-const GalleryList = ({ gallery }) => {
+const GalleryList = ({ gallery, getGallery }) => {
   console.log(gallery);
   return (
     <div className="gallery-container">
       {gallery.map((item) => (
-        <GalleryItem key={item.id} galleryItem={item} />
+        <GalleryItem getGallery={getGallery} key={item.id} galleryItem={item} />
       ))}
     </div>
   )
