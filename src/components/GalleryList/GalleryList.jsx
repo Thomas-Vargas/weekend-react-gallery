@@ -1,7 +1,7 @@
 import GalleryItem from "../GalleryItem/GalleryItem";
 
 const GalleryList = ({ gallery, getGallery }) => {
-  console.log(gallery);
+  // console.log(gallery);
   return (
     <div className="wrapper">
       <div className="gallery-container">

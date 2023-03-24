@@ -37,6 +37,7 @@ body {
   border-radius: 10px;
   width: 100px;
   height: 20px;
+  margin-right: 6px;
 }
 
 .gallery-img-container {
