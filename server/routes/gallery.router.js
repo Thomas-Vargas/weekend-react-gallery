@@ -3,6 +3,23 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 // DO NOT MODIFY THIS FILE FOR BASE MODE
+// DELETE Router
+router.delete('/:id', (req, res) => {
+    const idToDelete = req.params.id;
+    const sqlText = `DELETE FROM "gallery" WHERE "id" = $1;`
+
+    pool
+        .query(sqlText, [idToDelete])
+        .then(result => {
+            console.log('Deleted item from database with id:', idToDelete);
+            res.sendStatus(200);
+        })
+        .catch(error => {
+            res.sendStatus(500);
+            console.log(error);
+        })
+})
+
 // POST Route
 router.post('/', (req, res) => {
     const newGalleryItem = req.body;

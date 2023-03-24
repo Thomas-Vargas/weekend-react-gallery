@@ -8,8 +8,20 @@ const GalleryItem = ({ galleryItem, getGallery }) => {
     axios
       .put(`gallery/like/${id}`,  {})
       .then(result => {
-        console.log(result);
-        console.log('successfully updated like');
+        //console.log(result);
+        //console.log('successfully updated like');
+        getGallery();
+      })
+      .catch(error => {
+        console.log(error);
+      })
+  }
+
+  const handleDelete = (id) => {
+    axios
+      .delete(`gallery/${id}`)
+      .then(result => {
+        //console.log(result);
         getGallery();
       })
       .catch(error => {
@@ -22,7 +34,10 @@ const GalleryItem = ({ galleryItem, getGallery }) => {
       <div onClick={() => setToggle(!toggle)} className="gallery-img-container">
         {toggle ? <img className='gallery-img' src={galleryItem.path} /> : <p>{galleryItem.description}</p>}
       </div>
-      <button onClick={() => handleLike(galleryItem.id)}>Like</button>
+      <div>
+        <button onClick={() => handleLike(galleryItem.id)}>Like</button>
+        <button onClick={() => handleDelete(galleryItem.id)}>Remove</button>
+      </div>
       <p>{galleryItem.likes} people love this!</p>
     </div>
   );
