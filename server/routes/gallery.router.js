@@ -17,7 +17,7 @@ router.delete('/:id', (req, res) => {
         .catch(error => {
             res.sendStatus(500);
             console.log(error);
-        })
+        });
 })
 
 // POST Route
@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
         .catch(error => {
             console.log(error);
             res.sendStatus(500);
-        })
+        });
 })
 
 // PUT Route
@@ -53,7 +53,7 @@ router.put('/like/:id', (req, res) => {
         .catch(error => {
             console.log(error)
             res.sendStatus(500)
-        })
+        });
 }); // END PUT Route
 
 // GET Route
@@ -69,7 +69,7 @@ router.get('/', (req, res) => {
         .catch(error => {
             console.log(error)
             res.sendStatus(500)
-        })
+        });
 }); // END GET Route
 
 module.exports = router;

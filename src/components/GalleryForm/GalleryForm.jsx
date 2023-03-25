@@ -6,7 +6,8 @@ const GalleryForm = ({ getGallery }) => {
   const [description, setDescription] = useState('')
 
   const addToGallery = () => {
-    axios
+    if (url && description) {
+      axios
       .post('/gallery', {
         path: url,
         description: description
@@ -20,6 +21,10 @@ const GalleryForm = ({ getGallery }) => {
       .catch(error => {
         console.log(error);
       })
+    }
+    else {
+      alert('Provide a url and description.')
+    }
   }
 
   return (
