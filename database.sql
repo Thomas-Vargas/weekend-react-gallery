@@ -4,7 +4,7 @@ DROP TABLE gallery;
 
 CREATE TABLE gallery (
 	id SERIAL PRIMARY KEY,
-	path varchar(280) NOT NULL,
+	path varchar(500) NOT NULL,
 	description varchar(400) NOT NULL,
 	likes INTEGER DEFAULT 0
 );
